@@ -20,7 +20,6 @@ function buscarEndereco(cep) {
       }
 
       document.getElementById('logradouro').value = data.logradouro || '';
-      document.getElementById('numero').value = data.numero || '';
       document.getElementById('bairro').value = data.bairro || '';
       document.getElementById('cidade').value = data.localidade || '';
       document.getElementById('uf').value = data.uf || '';
@@ -33,7 +32,7 @@ function buscarEndereco(cep) {
 }
 
 function limparCamposEndereco() {
-  const campos = ['logradouro', 'numero', 'bairro', 'cidade', 'uf'];
+  const campos = ['logradouro', 'bairro', 'cidade', 'uf'];
   campos.forEach(id => {
     const el = document.getElementById(id);
     if (el) el.value = '';
@@ -61,17 +60,13 @@ btnSalvar.addEventListener('click', () => {
   alert('Aluno salvo');
 
   limparCamposTodos();
-});
-
-
-btnExibir.addEventListener('click', () => {
-  const listaEnderecos = JSON.parse(localStorage.getItem('listaEnderecos')) || [];
+  const listaEnderecosS = JSON.parse(localStorage.getItem('listaEnderecos')) || [];
   const container = document.getElementById('lista');
 
   container.innerHTML = ''; 
 
   if (listaEnderecos.length === 0) {
-    container.textContent = 'Nenhum endereço salvo.';
+    container.textContent = 'Nenhum aluno salvo.';
     return;
   }
 
@@ -90,7 +85,7 @@ btnExibir.addEventListener('click', () => {
       <div><strong>UF:</strong> ${endereco.uf}</div>
     `;
     container.appendChild(card);
-  });
+});
 });
 
 btnBuscar.addEventListener('click', () => {
