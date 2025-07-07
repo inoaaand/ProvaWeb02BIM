@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PROVA WEB 02BIM</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<!-- filter -->
+<body>
+    <div class="inputs">
+        <img src="img/if.png" alt="imagem instituto federal" />
+        <h2>Cadastro de alunos:</h2>
+
+        <p>
+            <label for="nome">Nome:</label>
+            <input type="text" class="input" name="nome" id="nome" placeholder="Digite seu nome" />
+        </p>
+
+        <p>
+            <label for="Email">Email:</label>
+            <input type="text" class="input" name="Email" id="Email" placeholder="Digite seu email" />
+        </p>
+
+        <p>
+            <label for="cep">CEP:</label>
+            <input type="text" id="cep" placeholder="Digite seu CEP" maxlength="9" />
+        </p>
+
+        <p>
+            <label for="logradouro">Logradouro:</label>
+            <input type="text" id="logradouro" placeholder="" />
+        </p>
+
+        <p>
+            <label for="numero">Numero:</label>
+            <input type="text" id="numero" placeholder="" />
+        </p>
+
+        <p>
+            <label for="bairro">Bairro:</label>
+            <input type="text" id="bairro" placeholder="" />
+        </p>
+
+        <p>
+            <label for="cidade">Cidade:</label>
+            <input type="text" id="cidade" placeholder="" />
+        </p>
+
+        <p>
+            <label for="uf">UF:</label>
+            <input type="text" id="uf" placeholder="" />
+        </p>
+
+
+        <div class="botoes">
+            <button id="btnSalvar">Cadastrar</button>
+            <button id="btnExibir">Exibir Dados</button>
+        </div>
+
+        <ul id="lista"></ul><div id="lista" class="lista-enderecos"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
