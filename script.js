@@ -92,9 +92,9 @@ btnListar.addEventListener('click', () => {
 });
 
 
-btnBuscar.addEventListener('click', () => {
+nomeBuscar.addEventListener('click', () => {
   const nome = JSON.parse(localStorage.getItem('nome'));
-  
+
   function check(nome) {
     return nome == nome
   }
