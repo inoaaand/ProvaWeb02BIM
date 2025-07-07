@@ -93,17 +93,13 @@ btnListar.addEventListener('click', () => {
 
 
 btnBuscar.addEventListener('click', () => {
-  const listaEnderecos = JSON.parse(localStorage.getItem('listaEnderecos')) || [];
-  listaEnderecos.push(novoEndereco);
-  localStorage.setItem('listaEnderecos', JSON.stringify(listaEnderecos));
-
+  const nome = JSON.parse(localStorage.getItem('nome'));
+  
   function check(nome) {
-    return nome
+    return nome == nome
   }
 
-  function myFunction() {
-    document.getElementById("btnBuscar").innerHTML = listaEnderecos.filter(check);
-  }
+  document.getElementById("btnBuscar").innerHTML = nome.filter(check);
 
 })
 
