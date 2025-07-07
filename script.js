@@ -91,7 +91,6 @@ btnListar.addEventListener('click', () => {
   });
 });
 
-
 nomeBuscar.addEventListener('click', () => {
   const nome = JSON.parse(localStorage.getItem('nome'));
   const nomeD = document.getElementById('nome');
