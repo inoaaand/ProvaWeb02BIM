@@ -39,17 +39,16 @@ function limparCamposEndereco() {
   });
 }
 
-
 btnSalvar.addEventListener('click', () => {
   const novoEndereco = {
     nome: document.getElementById('nome').value.trim(),
-    email: document.getElementById('email').value.trim(),
     cep: document.getElementById('cep').value.trim(),
     logradouro: document.getElementById('logradouro').value.trim(),
     numero: document.getElementById('numero').value.trim(),
     bairro: document.getElementById('bairro').value.trim(),
     cidade: document.getElementById('cidade').value.trim(),
     uf: document.getElementById('uf').value.trim(),
+  
   };
 
 
@@ -60,7 +59,11 @@ btnSalvar.addEventListener('click', () => {
   alert('Aluno salvo');
 
   limparCamposTodos();
-  const listaEnderecosS = JSON.parse(localStorage.getItem('listaEnderecos')) || [];
+});
+
+
+btnListar.addEventListener('click', () => {
+  const listaEnderecos = JSON.parse(localStorage.getItem('listaEnderecos')) || [];
   const container = document.getElementById('lista');
 
   container.innerHTML = ''; 
@@ -76,20 +79,32 @@ btnSalvar.addEventListener('click', () => {
 
     card.innerHTML = `
       <div><strong>Nome:</strong> ${endereco.nome}</div>
-      <div><strong>Email:</strong> ${endereco.email}</div>
       <div><strong>CEP:</strong> ${endereco.cep}</div>
       <div><strong>Logradouro:</strong> ${endereco.logradouro}</div>
-      <div><strong>Numero:</strong> ${endereco.numero}</div>
+      <div><strong>numero:</strong> ${endereco.numero}</div>
       <div><strong>Bairro:</strong> ${endereco.bairro}</div>
       <div><strong>Cidade:</strong> ${endereco.cidade}</div>
       <div><strong>UF:</strong> ${endereco.uf}</div>
     `;
+
     container.appendChild(card);
-});
+  });
 });
 
+
 btnBuscar.addEventListener('click', () => {
-    
+  const listaEnderecos = JSON.parse(localStorage.getItem('listaEnderecos')) || [];
+  listaEnderecos.push(novoEndereco);
+  localStorage.setItem('listaEnderecos', JSON.stringify(listaEnderecos));
+
+  function check(nome) {
+    return nome
+  }
+
+  function myFunction() {
+    document.getElementById("btnBuscar").innerHTML = listaEnderecos.filter(check);
+  }
+
 })
 
 function limparCamposTodos() {

@@ -1,36 +1,41 @@
-
+ 
   body {
-    background-color: #e6f4ea;
-    font-family: Arial rgb(0, 0, 0)serif;
-    padding: 20px;
+    font-family: Arial, sans-serif;
+    background: #e6f4ea;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+   
   }
-  
   
   .inputs {
     display: flex;
     flex-direction: column;
     align-items:normal;
     width: 90%;
-    max-width: 600px;
+    max-width: 1500px;
     margin: auto;
     background-color: white;
     padding: 30px;
-    border-radius: 30px;
+    border-radius: 10 px;
   }
-  
 
   .inputs img {
-    height: 100px;
-    margin-bottom: 20px;
-
+    margin: 0 auto 10px;
+    height: 50px;
+    margin-bottom: 50px;
   }
   
-  
   .inputs h2 {
-    font-size: 24px;
+    height: 50px;
+    margin-bottom: 50px;
+    font-size: 25px;
     color: #000000;
     margin-bottom: 20px;
     text-align: center;
+    font-style:normal;
   }
   
   .inputs p {
@@ -67,8 +72,9 @@
   }
   
   #btnSalvar,
-  #btnExibir {
+  #btnListar {
     padding: 10px;
+    max-width: 100px;
     background-color: #2e7d32;
     border: none;
     border-radius: 5px;
@@ -83,19 +89,25 @@
     background-color: #ececec;
     border: none;
     border-radius: 5px;
-    color: white;
+    color: rgb(0, 0, 0);
     font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
   }
   
   #btnSalvar:hover {
     background-color: #1b5e20;
+  }
+
+  #btnSalvar:hover {
+    background-color: #a5a5a5;
   }
   
   .lista-enderecos {
     display: flex;
     gap: 15px;
     margin-top: 30px;
-    justify-content:left
+    justify-content:left;
   }
   
   .card-endereco {
