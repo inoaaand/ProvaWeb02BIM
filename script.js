@@ -33,7 +33,7 @@ function buscarEndereco(cep) {
 }
 
 function limparCamposEndereco() {
-  const campos = ['logradouro', 'bairro', 'cidade', 'uf', 'numero',];
+  const campos = ['logradouro', 'numero', 'bairro', 'cidade', 'uf'];
   campos.forEach(id => {
     const el = document.getElementById(id);
     if (el) el.value = '';
@@ -81,22 +81,24 @@ btnExibir.addEventListener('click', () => {
 
     card.innerHTML = `
       <div><strong>Nome:</strong> ${endereco.nome}</div>
+      <div><strong>Email:</strong> ${endereco.email}</div>
       <div><strong>CEP:</strong> ${endereco.cep}</div>
       <div><strong>Logradouro:</strong> ${endereco.logradouro}</div>
-      <div><strong>Complemento:</strong> ${endereco.complemento}</div>
+      <div><strong>Numero:</strong> ${endereco.numero}</div>
       <div><strong>Bairro:</strong> ${endereco.bairro}</div>
       <div><strong>Cidade:</strong> ${endereco.cidade}</div>
       <div><strong>UF:</strong> ${endereco.uf}</div>
-      <div><strong>IBGE:</strong> ${endereco.codigo_ibge}</div>
     `;
-
     container.appendChild(card);
   });
 });
 
+btnBuscar.addEventListener('click', () => {
+    
+})
 
 function limparCamposTodos() {
-  const campos = ['nome', 'cep', 'logradouro', 'complemento', 'bairro', 'cidade', 'uf', 'codigo_ibge'];
+  const campos = ['nome', 'email', 'cep', 'logradouro', 'numero', 'bairro', 'cidade', 'uf'];
   campos.forEach(id => {
     const el = document.getElementById(id);
     if (el) el.value = '';
