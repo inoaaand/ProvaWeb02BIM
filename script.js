@@ -94,9 +94,10 @@ btnListar.addEventListener('click', () => {
 
 nomeBuscar.addEventListener('click', () => {
   const nome = JSON.parse(localStorage.getItem('nome'));
+  const nomeD = document.getElementById('nome');
 
   function check(nome) {
-    return nome == nome
+    return nomeD == nome
   }
 
   document.getElementById("btnBuscar").innerHTML = nome.filter(check);
